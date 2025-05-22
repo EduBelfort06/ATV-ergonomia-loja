@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loja Web</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-screen" class="tela">
+    <h2>Login</h2>
+    <input type="text" placeholder="Usuário" id="user" />
+    <input type="password" placeholder="Senha" id="pass" />
+    <button onclick="login()">Entrar</button>
+    <button onclick="entrarSemLogin()" class="secundario">Entrar sem login</button>
+  </div>
+
+  <div id="loja-screen" class="tela oculto">
+    <nav>
+      <button onclick="mostrarTela('cadastro')">Cadastro</button>
+      <button onclick="mostrarTela('dashboard')">Dashboard</button>
+      <button onclick="mostrarTela('vendas')">Vendas</button>
+      <button onclick="logout()" class="sair">Sair</button>
+    </nav>
+
+    <section id="cadastro" class="secao">
+      <h2>Cadastro de Produtos</h2>
+      <input type="text" id="nome-produto" placeholder="Nome do produto" />
+      <input type="number" id="preco-produto" placeholder="Preço" />
+      <button onclick="cadastrarProduto()">Cadastrar</button>
+      <ul id="lista-produtos"></ul>
+    </section>
+
+    <section id="dashboard" class="secao oculto">
+      <h2>Dashboard</h2>
+      <p>Total de produtos: <span id="total-produtos">0</span></p>
+    </section>
+
+    <section id="vendas" class="secao oculto">
+      <h2>Vendas</h2>
+      <p>Área de vendas em construção...</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
